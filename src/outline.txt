@@ -1,0 +1,16 @@
+Title Slide
+Aria, WCAG, WAI Definitions
+Aria
+    General Beliefs and Usage
+WCAG
+    General Beliefs and Usage
+WAI
+    General Beliefs and Usage
+Overlap
+    What matters most
+        Header tags
+        alt text
+
+Examples
+    Accessibility - bad, good, better
+Final Slide <- git repo

@@ -12,6 +12,9 @@ import {
   Quote,
   Slide,
   Text,
+  Appear,
+  // CodePane,
+  ComponentPlayground,
 } from 'spectacle';
 
 // Import theme
@@ -33,23 +36,91 @@ const theme = createTheme(
   }
 );
 
-export default class Presentation extends React.Component {
-  render() {
+export const Presentation = () => {
     return (
       <Deck
+        // slide, zoom, fade, spin
         transition={['zoom', 'slide']}
         transitionDuration={500}
         theme={theme}
+        controls={false}
+        progress='pacman'
+        showFullscreenControl={false}
       >
-        <Slide transition={['zoom']} bgColor="primary">
+      {/* Title */}
+        <Slide bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
+            Web Accessibility 101
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
+            Aria && WAI && WCAG 2.0h my
           </Text>
         </Slide>
-        <Slide transition={['fade']} bgColor="tertiary">
+        <Slide bgColor='secondary'>
+          <Heading size={1} textColor='tertiary' fit caps>
+            WTF
+          </Heading>
+        </Slide>
+        {/* Definitions */}
+        <Slide bgColor='tertiary'>
+          <Appear>
+            <Text margin="40px 0 0" textColor="secondary" bold>
+              Aria -> Accessible Rich Internet Applications
+            </Text>
+          </Appear>
+          <Appear>
+            <Text margin="25px 0 0" textColor="secondary" bold>
+              WAI -> Web Accessibility Initiative
+            </Text>
+          </Appear>
+          <Appear>
+            <Text margin="25px 0 0" textColor="secondary" bold>
+              WCAG 2.0 -> Web Content Accessibility Guidelines (2.0)
+            </Text>
+          </Appear>
+        </Slide>
+        {/* Aria */}
+        <Slide bgColor='secondary'>
+          <Heading size={1} textColor='tertiary'>
+            Aria
+          </Heading>
+          <List textColor='primary'>    
+          <Appear>
+            <ListItem>
+              aria-label
+            </ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>
+              aria-hidden
+            </ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>
+              aria-role
+            </ListItem>
+          </Appear>
+          </List>
+        </Slide>
+
+        {/* WAI */}
+        <Slide bgColor='primary'>
+          <Heading size={1} textColor='secondary'>
+            WAI
+          </Heading>
+        </Slide>
+        {/* WCAG 2.0 */}
+        <Slide bgColor='tertiary'>
+          <Heading size={1} textColor='primary'>
+            WCAG 2.0
+          </Heading>
+        </Slide>
+        {/* Playground Example Attempt */}
+        <Slide bgColor='tertiary'>
+          <ComponentPlayground lang='jsx' margin="20px auto" overflow="overflow" />
+        </Slide>
+        {/* Heading Examples */}
+        <Slide bgColor="tertiary">
           <Heading size={6} textColor="primary" caps>
             Typography
           </Heading>
@@ -72,7 +143,8 @@ export default class Presentation extends React.Component {
             Standard text
           </Text>
         </Slide>
-        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
+        {/* List Example */}
+        <Slide bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>
             Standard List
           </Heading>
@@ -83,7 +155,8 @@ export default class Presentation extends React.Component {
             <ListItem>Item 4</ListItem>
           </List>
         </Slide>
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+        {/* Quote Example */}
+        <Slide bgColor="secondary" textColor="primary">
           <BlockQuote>
             <Quote>Example Quote</Quote>
             <Cite>Author</Cite>
@@ -91,5 +164,4 @@ export default class Presentation extends React.Component {
         </Slide>
       </Deck>
     );
-  }
 }

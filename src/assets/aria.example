@@ -1,0 +1,10 @@
+const Input = () => {
+    return (
+        <div>
+            <label htmlFor='exampleID'>My sample input</label>
+            <input type='text' id='exampleID' />
+        </div>
+    )
+}
+
+render(<Input />);
