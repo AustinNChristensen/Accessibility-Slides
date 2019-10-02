@@ -1,6 +1,15 @@
 Title Slide
+Motivation for Accessibility
 Aria, WCAG, WAI Definitions
-Aria
+HTML
+    Semantic Elements should be #1 priority
+    Example of when Accessibility fails with pure HTML
+Aria https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics
+    Roles
+    Properties
+    States
+    95% of browsers support. according to caniuse.com https://caniuse.com/#feat=wai-aria If they don't, they don't matter because someone that 
+        needs them wouldn't be using a browser without support
     General Beliefs and Usage
 WCAG
     General Beliefs and Usage
