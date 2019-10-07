@@ -2,6 +2,18 @@
 // Import React
 import React from 'react';
 
+// intro
+// why accessibility matters
+// types of impairments
+// wai
+// wcag -> checklist & POUR
+// Focus problems
+//  Tab Order
+// Semantics
+//  Landmarks
+// Aria - when great html is not enough
+
+
 // Import Spectacle Core tags
 import {
   BlockQuote,
@@ -82,6 +94,34 @@ export const Presentation = () => {
             <Cite textColor='secondary'>Mozilla Developer Network</Cite>
           </BlockQuote>
         </Slide> 
+        {/* WAI */}
+        <Slide bgColor='primary'>
+          <Heading size={1} textColor='secondary'>
+            W3C & WAI
+          </Heading>
+          <Appear>
+            <Text margin={15}><Text textColor='tertiary'>The World Wide Web Consortium (W3C)</Text> develops standards for the web: HTML, CSS, etc.</Text>
+          </Appear>
+          <Appear>
+            <Text margin={15}><Text textColor='tertiary'>The Web Accessibility Initiative (WAI)</Text> is a never-ending project, led by the W3C, to create guidelines and support materials for implementing accessibility.</Text>
+          </Appear>
+          <Appear>
+          {/* Some type of checklist image??? */}
+            <Text textColor='tertiary'><a href='https://webaim.org/' target='_blank' rel="noopener noreferrer">WAI Checklist</a></Text>
+          </Appear>
+        </Slide>
+        {/* WCAG 2.0 Definition */}
+        <Slide bgColor='tertiary'>
+          <Heading size={1} textColor='primary'>
+            WCAG 2.1
+          </Heading>
+          <Appear>
+            <Text margin={30}>Web Content Accessibility Guidelines</Text>
+          </Appear>
+          <Appear>
+            <Text>2.1 was standardized in Europe in September 2018</Text>
+          </Appear>
+        </Slide>
         {/* Types of Impairments */}
         <Slide bgColor='secondary'>
           <Appear>
@@ -127,31 +167,7 @@ export const Presentation = () => {
             </Fill>
           </Layout>
         </Slide> 
-        {/* WAI */}
-        <Slide bgColor='primary'>
-          <Heading size={1} textColor='secondary'>
-            WAI
-          </Heading>
-          <List textColor='tertiary'>    
-          <Appear>
-            <ListItem textColor='tertiary'><a href='https://webaim.org/' target='_blank' rel="noopener noreferrer">WAI Checklist</a></ListItem>
-          </Appear>
-          <Appear>
-            <ListItem></ListItem>
-          </Appear>
-          <Appear>
-            <ListItem> </ListItem>
-          </Appear>
-          </List>
-        </Slide>
-        {/* WCAG 2.0 */}
-        <Slide bgColor='tertiary'>
-          <Heading size={1} textColor='primary'>
-            WCAG 2.0
-          </Heading>
-          2.1 was standardized in Europe in September 2018
-        </Slide>
-        {/* Perceivable */}
+        {/* WCAG Perceivable */}
         <Slide>
           <Heading>Perceivable</Heading>
           Is the information presented in a format that the end-user can understand?
@@ -159,7 +175,7 @@ export const Presentation = () => {
             All users must be able to perceive it in some way, using one or more of their senses.
           </Notes>
         </Slide>
-        {/* Operable */}
+        {/* WCAG Operable */}
         <Slide>
           <Heading>Operable</Heading>
           <Text>
@@ -173,23 +189,30 @@ export const Presentation = () => {
             Hover without a mouse?
           </Notes>
         </Slide>
-        {/* Understandable */}
+        {/* WCAG Understandable */}
         <Slide>
           <Heading>Understandable</Heading>
           <Text>
             Is the context of information and operations understandable?
           </Text>
         </Slide>
-        {/* Robust */}
+        {/* WCAG Robust */}
         <Slide>
           <Heading>Robust</Heading>
           <Text>
             Are you using future-proof methods to ensure accessibility into the future?
           </Text>
         </Slide>
+      
+
         {/* Techniques for Accessibility */}
 
         {/* Focus */}
+        <Slide>
+          <Heading>
+            Focus
+          </Heading>
+        </Slide>
         <Slide>
           <Text>
             <a href='https://webaim.org/standards/wcag/checklist#sc2.1.1'>
@@ -206,10 +229,14 @@ export const Presentation = () => {
         </Slide>
         {/* Make example for form thats keyboard accessible */}
         {/* Built in Semantics */}
+        <Slide>
+          <Heading>Semantic HTML</Heading>
+        </Slide>
 
         {/* Extended Semantics with Aria */}
-        
-        
+        <Slide>
+          <Heading>Extending Semantics with WAI-ARIA</Heading>
+        </Slide>
         
         
         
