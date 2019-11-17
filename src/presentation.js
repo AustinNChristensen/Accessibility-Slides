@@ -1,7 +1,8 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 // Import React
 import React from 'react';
-
+import solsticeImage from './assets/solstice.png';
+import { TAB_ORDER_EXAMPLE_URL } from './vars';
 // intro
 // why accessibility matters
 // types of impairments
@@ -38,6 +39,7 @@ import {
   TableBody,
   TableRow,
   TableItem,
+  Link,
 } from 'spectacle';
 
 // Import theme
@@ -54,8 +56,8 @@ const theme = createTheme(
     quaternary: '#CECECE',
   },
   {
-    primary: 'Montserrat',
-    secondary: 'Helvetica',
+    primary: 'Lato',
+    secondary: 'Lato',
   }
 );
 
@@ -79,12 +81,13 @@ export const Presentation = () => {
             Aria && WAI && WCAG 2.0h my
           </Text>
         </Slide>
+        <Slide bgImage={solsticeImage}></Slide>
         <Slide bgColor='secondary'>
           <Heading size={1} textColor='tertiary' fit caps>
             WTF*
           </Heading>
           <Text textColor='primary' textSize='16px'>
-            *What the Frontend
+            * What the Frontend
           </Text>
         </Slide>
         {/* Motivation */}
@@ -107,7 +110,7 @@ export const Presentation = () => {
           </Appear>
           <Appear>
           {/* Some type of checklist image??? */}
-            <Text textColor='tertiary'><a href='https://webaim.org/' target='_blank' rel="noopener noreferrer">WAI Checklist</a></Text>
+            <Text textColor='tertiary'><Link href='https://webaim.org/' target='_blank' rel="noopener noreferrer">WAI Checklist</Link></Text>
           </Appear>
         </Slide>
         {/* WCAG 2.0 Definition */}
@@ -203,10 +206,7 @@ export const Presentation = () => {
             Are you using future-proof methods to ensure accessibility into the future?
           </Text>
         </Slide>
-      
-
         {/* Techniques for Accessibility */}
-
         {/* Focus */}
         <Slide>
           <Heading>
@@ -215,34 +215,183 @@ export const Presentation = () => {
         </Slide>
         <Slide>
           <Text>
-            <a href='https://webaim.org/standards/wcag/checklist#sc2.1.1'>
+            <Link href='https://webaim.org/standards/wcag/checklist#sc2.1.1'>
               Guideline 2.1
-            </a>
+            </Link>
             &nbsp;states that all functionality should be accessibile using only the keyboard
           </Text>
         </Slide>
         <Slide>
-          <Text>Understand tab-order</Text>
-          <Text>Implicit focus - text fields, buttons, select lists</Text>
-          <Text>Not - divs, paragraphs, spans, etc. - they have no interaction</Text>
+          {/* Make this look better */}
+          <Heading size={3}>Understand Tab Order</Heading>
+          <Text>Focusable by Default</Text>
+          <Text>Ignored by Default</Text>
+          <Text>Overriding Defaults</Text>
+        </Slide>
+        <Slide>
+          {/*  Color these + content */}
+          <Heading size={3}>Focusable by Default</Heading>
+          <Heading size={6}>(Implicit Focus)</Heading>
+          <Text>text fields, buttons, select lists</Text>
+        </Slide>
+        <Slide>
+          {/*  Color these + content */}
+          <Heading size={3}>Ignored by Default</Heading>
+          <Text>divs, paragraphs, spans, etc. - they have no interaction</Text>
+        </Slide>
+        <Slide>
+          {/*  Color these + content */}
+          <Heading size={3}>Overriding Default</Heading>
           <Text>Display none - visibility hidden remove element from tab order</Text>
         </Slide>
-        {/* Make example for form thats keyboard accessible */}
+        <Slide>
+          {/*  Color these + content */}
+          <Heading size={3}>Demo Time!</Heading>
+          <Link href={TAB_ORDER_EXAMPLE_URL} target='_blank' rel='noopener noreferrer'>Click here for a demo</Link>
+        </Slide>
         {/* Built in Semantics */}
         <Slide>
-          <Heading>Semantic HTML</Heading>
+          <Heading size={1}>Semantic HTML</Heading>
         </Slide>
-
+        <Slide>
+          <Text>Semantic HTML allows Assistive Technology (AT) to automatically pull context from a page when used correctly.</Text>
+        </Slide>
+          <Slide>
+            <Heading size={2}>Bad Semantics</Heading>
+            <Text>TODO</Text>
+          </Slide>
+          <Slide>
+            <Heading size={2}>Div</Heading>
+            <Text>TODO</Text>
+          </Slide>
+          <Slide>
+            <Heading size={2}>Span</Heading>
+            <Text>TODO</Text>
+          </Slide>
+        <Slide>
+          <Heading size={2}>Landmarks & Signposts</Heading>
+          <Text>AT can easily navigate using only Landmarks when used correctly</Text>
+          <Text>Content outside of landmarks is referred to as being orphaned</Text>
+        </Slide>
+          <Slide>
+            <Heading size={2}>Landmarks</Heading>
+            <Text>Form, Table, main, nav, article, section, footer, header, aside</Text>
+          </Slide>
+          <Slide>
+            <Heading size={3}>Form</Heading>
+            <Text>TODO</Text>
+          </Slide>
+          <Slide>
+            <Heading size={3}>Table</Heading>
+            <Text>TODO</Text>
+          </Slide>
+          <Slide>
+            <Heading size={3}>Main</Heading>
+            <Text>TODO</Text>
+          </Slide>
+          <Slide>
+            <Heading size={3}>Nav</Heading>
+            <Text>TODO</Text>
+          </Slide>
+          <Slide>
+            <Heading size={3}>Article</Heading>
+            <Text>TODO</Text>
+          </Slide>
+          <Slide>
+            <Heading size={3}>Section</Heading>
+            <Text>TODO</Text>
+          </Slide>
+          <Slide>
+            <Heading size={3}>Article vs Section</Heading>
+            <Text>TODO</Text>
+          </Slide>
+          <Slide>
+            <Heading size={3}>Footer</Heading>
+            <Text>TODO</Text>
+          </Slide>
+          <Slide>
+            <Heading size={3}>Header</Heading>
+            <Text>TODO</Text>
+          </Slide>
+          <Slide>
+            <Heading size={3}>Aside</Heading>
+            <Text>TODO</Text>
+          </Slide>
+          <Slide>
+            <Heading size={2}>Text Formatting</Heading>
+            <Text>p, h1-h6, blockquote, ul</Text>
+          </Slide>
         {/* Extended Semantics with Aria */}
         <Slide>
           <Heading>Extending Semantics with WAI-ARIA</Heading>
         </Slide>
-        
-        
-        
-        
-        
-        
+        {/* Aria */}
+        <Slide bgColor='secondary'>
+          <Heading size={1} textColor='tertiary'>
+            Aria
+          </Heading>
+          <List textColor='primary'>    
+          <Appear>
+            <ListItem>
+              aria-label
+            </ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>
+              aria-hidden
+            </ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>
+              aria-role
+            </ListItem>
+          </Appear>
+          </List>
+        </Slide>
+        {/* Aria Role Equivalents */}
+        <Slide>
+        <Table>
+            <TableHeader>
+              <TableHeaderItem>Aria Role</TableHeaderItem>
+              <TableHeaderItem>HTML 5 Equivalent</TableHeaderItem>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableItem>banner</TableItem>
+                <TableItem>none</TableItem>
+              </TableRow>
+              <TableRow>
+                <TableItem>complementary</TableItem>
+                <TableItem>aside</TableItem>
+              </TableRow>
+              <TableRow>
+                <TableItem>contentInfo</TableItem>
+                <TableItem>none</TableItem>
+              </TableRow>
+              <TableRow>
+                <TableItem>form</TableItem>
+                <TableItem>form / div</TableItem>
+              </TableRow>
+              <TableRow>
+                <TableItem>main</TableItem>
+                <TableItem>main</TableItem>
+              </TableRow>
+              <TableRow>
+                <TableItem>navigation</TableItem>
+                <TableItem>nav</TableItem>
+              </TableRow>
+              <TableRow>
+                <TableItem>search</TableItem>
+                <TableItem>none</TableItem>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </Slide>
+        {/* Aria Support */}
+        <Slide>
+        <Heading size={6}>Do browsers support Aria?</Heading>
+          Global support is roughly 95% according to <Link style={{ fontStyle: 'none', color: 'inherit' }} href='https://caniuse.com/#feat=wai-aria'>caniuse.com</Link>
+        </Slide>
         
         <Slide>
           <List>
@@ -300,89 +449,7 @@ export const Presentation = () => {
             <ListItem>Item 3</ListItem>
             <ListItem>Item 4</ListItem>
           </List>
-        </Slide>
-
-
-
-
-
-
-
-        {/* Aria */}
-        <Slide bgColor='secondary'>
-          <Heading size={1} textColor='tertiary'>
-            Aria
-          </Heading>
-          <List textColor='primary'>    
-          <Appear>
-            <ListItem>
-              aria-label
-            </ListItem>
-          </Appear>
-          <Appear>
-            <ListItem>
-              aria-hidden
-            </ListItem>
-          </Appear>
-          <Appear>
-            <ListItem>
-              aria-role
-            </ListItem>
-          </Appear>
-          </List>
-        </Slide>
-        {/* Aria Landmarks */}
-        <Slide>
-          <Heading>Landmarks & Signposts</Heading>
-          <Text>AT can easily navigate using only Landmarks when used correctly</Text>
-          <Text>Content outside of landmarks is referred to as being orphaned</Text>
-        </Slide>
-        {/* Aria Role Equivalents */}
-        <Slide>
-        <Table>
-            <TableHeader>
-              <TableHeaderItem>Aria Role</TableHeaderItem>
-              <TableHeaderItem>HTML 5 Equivalent</TableHeaderItem>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableItem>banner</TableItem>
-                <TableItem>none</TableItem>
-              </TableRow>
-              <TableRow>
-                <TableItem>complementary</TableItem>
-                <TableItem>aside</TableItem>
-              </TableRow>
-              <TableRow>
-                <TableItem>contentInfo</TableItem>
-                <TableItem>none</TableItem>
-              </TableRow>
-              <TableRow>
-                <TableItem>form</TableItem>
-                <TableItem>form / div</TableItem>
-              </TableRow>
-              <TableRow>
-                <TableItem>main</TableItem>
-                <TableItem>main</TableItem>
-              </TableRow>
-              <TableRow>
-                <TableItem>navigation</TableItem>
-                <TableItem>nav</TableItem>
-              </TableRow>
-              <TableRow>
-                <TableItem>search</TableItem>
-                <TableItem>none</TableItem>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </Slide>
-        {/* Aria Support */}
-        <Slide>
-        <Heading size={6}>Do browsers support Aria???</Heading>
-          Global support is roughly 95% according to <a style={{ fontStyle: 'none', color: 'inherit' }} href='https://caniuse.com/#feat=wai-aria'>caniuse.com</a>
-        </Slide>
-      
-
+        </Slide>   
 
         {/* Definitions */}
         <Slide bgColor='tertiary'>

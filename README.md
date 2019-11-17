@@ -8,3 +8,4 @@ Repositories tied to this one:
 - Add talking points for POUR methodology
 - Finish ARIA section
 - Finish Semantic HTML section
+- Slide Animations (Appear)
