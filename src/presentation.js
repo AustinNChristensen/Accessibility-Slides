@@ -610,19 +610,3 @@ export const Presentation = () => {
         </Deck>
     );
 };
-
-
-const BlueHeader = styled(Heading)`
-    font-color: ${theme.tertiary};
-    margin-bottom: 15px;
-`;
-
-const WhiteHeader = styled(Heading)`
-    font-color: ${theme.primary};
-    margin-bottom: 15px;
-`;
-
-const Blackheader = styled(Heading)`
-    font-color: ${theme.secondary};
-    margin-bottom: 15px;
-`;
