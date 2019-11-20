@@ -74,9 +74,9 @@ export const Presentation = () => {
             </Slide>
             <Slide bgImage={solsticeImage}/>
             <Slide bgColor='secondary'>
-                <BlueHeader fit caps>
+                <Heading textColor='tertiary' fit caps>
                     WTF*
-                </BlueHeader>
+                </Heading>
                 <Text textColor='primary' textSize='16px'>
                     * What the Frontend
                 </Text>
@@ -118,7 +118,7 @@ export const Presentation = () => {
                     <Text margin={30}>Web Content Accessibility Guidelines</Text>
                 </Appear>
                 <Appear>
-                    <Text>2.1 was standardized in Europe in September 2018</Text>
+                    <Text margin={10}>2.1 was standardized in Europe in September 2018</Text>
                 </Appear>
             </Slide>
             {/* Types of Impairments */}
@@ -168,7 +168,7 @@ export const Presentation = () => {
             </Slide>
             {/* WCAG Perceivable */}
             <Slide>
-                <BlueHeader>Perceivable</BlueHeader>
+                <Heading textColor='tertiary'>Perceivable</Heading>
                 Is the information presented in a format that the end-user can understand?
                 <Notes>
                     All users must be able to perceive it in some way, using one or more of their senses.
@@ -176,8 +176,8 @@ export const Presentation = () => {
             </Slide>
             {/* WCAG Operable */}
             <Slide>
-                <BlueHeader>Operable</BlueHeader>
-                <Text>
+                <Heading textColor='tertiary'>Operable</Heading>
+                <Text margin={10}>
                     Can the user operate the interface?
                 </Text>
                 <Notes>
@@ -190,27 +190,27 @@ export const Presentation = () => {
             </Slide>
             {/* WCAG Understandable */}
             <Slide>
-                <BlueHeader>Understandable</BlueHeader>
-                <Text>
+                <Heading textColor='tertiary'>Understandable</Heading>
+                <Text margin={10}>
                     Is the context of information and operations understandable?
                 </Text>
             </Slide>
             {/* WCAG Robust */}
             <Slide>
-                <BlueHeader>Robust</BlueHeader>
-                <Text>
+                <Heading textColor='tertiary'>Robust</Heading>
+                <Text margin={10}>
                     Are you using future-proof methods to ensure accessibility into the future?
                 </Text>
             </Slide>
             {/* Techniques for Accessibility */}
             {/* Focus */}
             <Slide>
-                <BlueHeader>
+                <Heading textColor='tertiary'>
                     Managing Focus
-                </BlueHeader>
+                </Heading>
             </Slide>
             <Slide>
-                <Text>
+                <Text margin={10}>
                     <Link href='https://webaim.org/standards/wcag/checklist#sc2.1.1'>
                         Guideline 2.1
                     </Link>
@@ -219,180 +219,203 @@ export const Presentation = () => {
             </Slide>
             <Slide>
                 {/* Make this look better */}
-                <BlueHeader size={4}>Understand Tab Order</BlueHeader>
+                <Heading textColor='tertiary' size={4}>Understand Tab Order</Heading>
                 <Appear>
-                    <Text>Focusable by Default</Text>
+                    <Text margin={10}>Focusable by Default</Text>
                 </Appear>
                 <Appear>
-                    <Text>Ignored by Default</Text>
+                    <Text margin={10}>Ignored by Default</Text>
                 </Appear>
                 <Appear>
-                    <Text>Overriding Defaults</Text>
+                    <Text margin={10}>Overriding Defaults</Text>
                 </Appear>
             </Slide>
             <Slide>
-                <BlueHeader size={4}>Focusable by Default</BlueHeader>
+                <Heading textColor='tertiary' size={4}>Focusable by Default</Heading>
                 <Appear>
                     <Heading size={6}>(Implicit Focus)</Heading>
                 </Appear>
                 <Appear>
-                    <Text>inputs</Text>
+                    <Text margin={10}>inputs</Text>
                 </Appear>
                 <Appear>
-                    <Text>buttons</Text>
+                    <Text margin={10}>buttons</Text>
                 </Appear>
                 <Appear>
-                    <Text>select lists</Text>
+                    <Text margin={10}>select lists</Text>
                 </Appear>
             </Slide>
             <Slide>
-                <BlueHeader size={4}>Ignored by Default</BlueHeader>
+                <Heading textColor='tertiary' size={4}>Ignored by Default</Heading>
                 <Appear>
-                    <Text>divs / spans</Text>
+                    <Text margin={10}>divs / spans</Text>
                 </Appear>
                 <Appear>
-                    <Text>paragraphs</Text>
+                    <Text margin={10}>paragraphs</Text>
                 </Appear>
                 <Appear>
-                    <Text>sections / articles / header / footer</Text>
+                    <Text margin={10}>sections / articles / header / footer</Text>
                 </Appear>
-            </Slide>
-            <Slide>
-                {/*  Color these + content */}
-                <BlueHeader size={3}>Overriding Default</BlueHeader>
-                <Text>Display none - visibility hidden remove element from tab order</Text>
             </Slide>
             <Slide>
                 {/*  Color these + content */}
-                <BlueHeader size={3}>Demo Time!</BlueHeader>
+                <Heading textColor='tertiary' size={3}>Overriding Default</Heading>
+                <Text margin={10}>Display none - visibility hidden remove element from tab order</Text>
+            </Slide>
+            <Slide>
+                {/*  Color these + content */}
+                <Heading textColor='tertiary' size={3}>Demo Time!</Heading>
                 <Link href={TAB_ORDER_EXAMPLE_URL} target='_blank' rel='noopener noreferrer'>Click here for a
                     demo</Link>
             </Slide>
             {/* Built in Semantics */}
             <Slide>
-                <BlueHeader size={1}>Semantic HTML</BlueHeader>
+                <Heading textColor='tertiary' size={1}>Semantic HTML</Heading>
             </Slide>
             <Slide>
-                <Text>Semantic HTML allows Assistive Technology (AT) to automatically pull context from a page when used
+                <Text margin={10}>Semantic HTML allows Assistive Technology (AT) to automatically pull context from a
+                    page when used
                     correctly.</Text>
             </Slide>
             <Slide>
-                <BlueHeader size={2}>Bad Semantics</BlueHeader>
-                <Text>
+                <Heading textColor='tertiary' size={2}>Bad Semantics</Heading>
+                <Text margin={10}>
                     While poorly written code can cause problems for users who do not need
                     Assistive Technology, these bad practices can make it impossible for users
                     who rely on AT to use your site.
                 </Text>
             </Slide>
             <Slide>
-                <BlueHeader size={2}>Div</BlueHeader>
-                <Text>
+                <Heading textColor='tertiary' size={2}>Div</Heading>
+                <Text margin={10}>
                     Despite being the most overused HTML element in existence,
                     a div has no semantics and should be used strictly for grouping
                     semantic tags for styling purposes only.
                 </Text>
             </Slide>
             <Slide>
-                <BlueHeader size={2}>Span</BlueHeader>
-                <Text>
+                <Heading textColor='tertiary' size={2}>Span</Heading>
+                <Text margin={10}>
                     A span is very similar to a div in it's lack of semantics, but is used
                     primarily for grouping text-like fragments together in-line for styling.
                 </Text>
                 <p>ex: This is a span <span style={{ color: 'green' }}>here</span></p>
             </Slide>
             <Slide>
-                <BlueHeader size={2}>Landmarks & Signposts</BlueHeader>
-                <Text>AT can easily navigate using only Landmarks when used correctly.</Text>
-                <Text>Content outside of landmarks is referred to as being orphaned.</Text>
+                <Heading textColor='tertiary' size={2}>Landmarks & Signposts</Heading>
+                <Text margin={10}>AT can easily navigate using only Landmarks when used correctly.</Text>
+                <Text margin={10}>Content outside of landmarks is referred to as being orphaned.</Text>
             </Slide>
             <Slide>
-                <BlueHeader size={2}>Landmarks</BlueHeader>
+                <Heading textColor='tertiary' size={2}>Landmarks</Heading>
             </Slide>
             <Slide>
-                <BlueHeader size={3}>Form</BlueHeader>
-                <Text>Input elements that can be edited and submitted</Text>
+                <Heading textColor='tertiary' size={3}>Form</Heading>
+                <Text margin={10}>Input elements that can be edited and submitted</Text>
             </Slide>
             <Slide>
-                <BlueHeader size={3}>Table</BlueHeader>
-                <Text>Groups and displays data by row or column</Text>
+                <Heading textColor='tertiary' size={3}>Table</Heading>
+                <Text margin={10}>Groups and displays data by row or column</Text>
             </Slide>
             <Slide>
-                <BlueHeader size={3}>Main</BlueHeader>
-                <Text>Primary content of page. Only one `main` landmark should exist per page</Text>
+                <Heading textColor='tertiary' size={3}>Main</Heading>
+                <Text margin={10}>Primary content of page. Only one `main` landmark should exist per page</Text>
             </Slide>
             <Slide>
-                <BlueHeader size={3}>Nav</BlueHeader>
-                <Text>Defines navigation links</Text>
+                <Heading textColor='tertiary' size={3}>Nav</Heading>
+                <Text margin={10}>Defines navigation links</Text>
             </Slide>
             <Slide>
-                <BlueHeader size={3}>Article</BlueHeader>
-                <Text>Self-contained content<br/>Should make sense on its own</Text>
+                <Heading textColor='tertiary' size={3}>Article</Heading>
+                <Text margin={10}>Self-contained content</Text>
+                <Text>Should make sense on its own</Text>
             </Slide>
             <Slide>
-                <BlueHeader size={3}>Section</BlueHeader>
-                <Text>Defines a grouping of content<br />Typically contains a header</Text>
+                <Heading textColor='tertiary' size={3}>Section</Heading>
+                <Text margin={10}>Defines a grouping of content</Text>
+                <Text>Typically contains a header</Text>
             </Slide>
             <Slide>
-                <BlueHeader size={3}>Article vs Section</BlueHeader>
-                <Text>
-                    No rules!<br/>
-                </Text>
-                <section style={{ position: 'absolute', bottom: '225px', left: 0, right: 0, display: 'flex', fontSize: '20px'}}>
-                    <article style={{ flex: 1 }}>
+                <Heading textColor='tertiary' size={3}>Article vs Section</Heading>
+                <Text margin={10}>No rules!</Text>
+                <Layout>
+                    <Fill>
                         <code>
-                            &lt;Article&gt;<br />
-                            <span style={{ marginLeft: '75px' }}>&lt;Article/&gt;</span><br />
-                            &lt;/Article&gt;<br />
+                            &lt;Article&gt;<br/>
+                            <span style={{ marginLeft: '75px' }}>&lt;Article/&gt;</span><br/>
+                            &lt;/Article&gt;<br/>
                         </code>
-                    </article>
-                    <article style={{ flex: 1 }}>
+                    </Fill>
+                    <Fill>
                         <code>
-                            &lt;Article&gt;<br />
-                            <span style={{ marginLeft: '75px' }}>&lt;Section/&gt;</span><br />
-                            &lt;/Article&gt;<br />
+                            &lt;Article&gt;<br/>
+                            <span style={{ marginLeft: '75px' }}>&lt;Section/&gt;</span><br/>
+                            &lt;/Article&gt;<br/>
                         </code>
-                    </article>
-                    <article style={{ flex: 1 }}>
+                    </Fill>
+                    <Fill>
                         <code>
-                            &lt;Section&gt;<br />
-                            <span style={{ marginLeft: '75px' }}>&lt;Article/&gt;</span><br />
-                            &lt;/Section&gt;<br />
+                            &lt;Section&gt;<br/>
+                            <span style={{ marginLeft: '75px' }}>&lt;Article/&gt;</span><br/>
+                            &lt;/Section&gt;<br/>
                         </code>
-                    </article>
-                    <article style={{ flex: 1 }}>
+                    </Fill>
+                    <Fill>
                         <code>
-                            &lt;Section&gt;<br />
-                            <span style={{ marginLeft: '75px' }}>&lt;Section/&gt;</span><br />
-                            &lt;/Section&gt;<br />
+                            &lt;Section&gt;<br/>
+                            <span style={{ marginLeft: '75px' }}>&lt;Section/&gt;</span><br/>
+                            &lt;/Section&gt;<br/>
                         </code>
-                    </article>
-                </section>
+                    </Fill>
+                </Layout>
             </Slide>
             <Slide>
-                <BlueHeader size={3}>Footer</BlueHeader>
-                <Text>Typically contains author, copyright, ToU, contact info, etc</Text>
+                <Heading textColor='tertiary' size={3}>Footer</Heading>
+                <Appear>
+                    <Text margin={10}>Author</Text>
+                </Appear>
+                <Appear>
+                    <Text margin={10}>Copyright</Text>
+                </Appear>
+                <Appear>
+                    <Text margin={10}>Terms of Use</Text>
+                </Appear>
+                <Appear>
+                    <Text margin={10}>Contact Info</Text>
+                </Appear>
             </Slide>
             <Slide>
-                <BlueHeader size={3}>Header</BlueHeader>
-                <Text>Contains introductory content</Text>
+                <Heading textColor='tertiary' size={3}>Header</Heading>
+                <Text margin={10}>Contains introductory content</Text>
             </Slide>
             <Slide>
-                <BlueHeader size={3}>Aside</BlueHeader>
-                <Text>Defines content related to `main`</Text>
+                <Heading textColor='tertiary' size={3}>Aside</Heading>
+                <Text margin={10}>Defines content related to `main`</Text>
             </Slide>
             <Slide>
-                <BlueHeader size={2}>Text Formatting</BlueHeader>
-                <Text>p, h1-h6, blockquote, ul</Text>
+                <Heading textColor='tertiary' size={2}>Text Formatting</Heading>
+                <Appear>
+                    <Text margin={10}>p</Text>
+                </Appear>
+                <Appear>
+                    <Text margin={10}>h1-h6</Text>
+                </Appear>
+                <Appear>
+                    <Text margin={10}>blockquotes</Text>
+                </Appear>
+                <Appear>
+                    <Text margin={10}>ul</Text>
+                </Appear>
             </Slide>
             {/* Extended Semantics with Aria */}
             <Slide>
-                <BlueHeader>Extending Semantics with WAI-ARIA</BlueHeader>
+                <Heading textColor='tertiary'>Extending Semantics with WAI-ARIA</Heading>
             </Slide>
             {/* Aria */}
             <Slide bgColor='secondary'>
-                <BlueHeader>
+                <Heading textColor='tertiary'>
                     Arya Stark???
-                </BlueHeader>
+                </Heading>
             </Slide>
             <Slide bgColor='secondary'>
                 <video autoPlay loop>
@@ -400,16 +423,17 @@ export const Presentation = () => {
                 </video>
             </Slide>
             <Slide>
-                <BlueHeader>aria-label</BlueHeader>
-                <Text>Aria-label completely overrides default screen reader output and reads the aria-Label value in its
+                <Heading textColor='tertiary'>aria-label</Heading>
+                <Text margin={10}>Aria-label completely overrides default screen reader output and reads the aria-Label
+                    value in its
                     place.</Text>
                 <Code>{`<button aria-label='Click me!'>Hello</button>`}</Code>
                 <Text margin={50}
                       textColor='tertiary'>{`In this example, a screen reader would read aloud ' Click me! ',  rather than ' Hello '.`}</Text>
             </Slide>
             <Slide>
-                <BlueHeader>Aria Labelledby</BlueHeader>
-                <Text>
+                <Heading textColor='tertiary'>Aria Labelledby</Heading>
+                <Text margin={10}>
                     aria-labelledby is used to associate another element, using an id, as the descriptor
                     for the labelled element.
                 </Text>
@@ -420,24 +444,25 @@ export const Presentation = () => {
                 </Text>
             </Slide>
             <Slide>
-                <BlueHeader>Aria Live</BlueHeader>
-                <Text>aria-live notifies screen readers that updates to this dom node should be read to the user</Text>
+                <Heading textColor='tertiary'>Aria Live</Heading>
+                <Text margin={10}>aria-live notifies screen readers that updates to this dom node should be read to the
+                    user</Text>
                 <Code>{`<p aria-live='polite' />`}</Code>
                 <Code>{`<p aria-live='assertive' />`}</Code>
             </Slide>
             <Slide>
-                <BlueHeader>Aria Busy</BlueHeader>
-                <Text>aria-busy explains to a user that the node and / or its subtree is in the process of
+                <Heading textColor='tertiary'>Aria Busy</Heading>
+                <Text margin={10}>aria-busy explains to a user that the node and / or its subtree is in the process of
                     updating.</Text>
                 <Code>{`<section aria-busy='true'>Loading...</section>`}</Code>
             </Slide>
             <Slide>
-                <BlueHeader>Aria Hidden</BlueHeader>
-                <Text>aria-hidden hides the node element entirely from the Accessibility Tree</Text>
+                <Heading textColor='tertiary'>Aria Hidden</Heading>
+                <Text margin={10}>aria-hidden hides the node element entirely from the Accessibility Tree</Text>
                 <Code>{`<img aria-hidden='true' />`}</Code>
             </Slide>
             <Slide>
-                <BlueHeader>Aria Forms</BlueHeader>
+                <Heading textColor='tertiary'>Aria Forms</Heading>
                 <Layout>
                     <Fill>
                         <Fit>
@@ -455,7 +480,7 @@ export const Presentation = () => {
                 </Layout>
             </Slide>
             <Slide>
-                <BlueHeader>Aria Progress Bar</BlueHeader>
+                <Heading textColor='tertiary'>Aria Progress Bar</Heading>
                 <Layout>
                     <Fill>
                         <Fit>
@@ -474,7 +499,7 @@ export const Presentation = () => {
             </Slide>
             {/* Aria Role Equivalents */}
             <Slide>
-                <BlueHeader>Aria Roles</BlueHeader>
+                <Heading textColor='tertiary'>Aria Roles</Heading>
                 <Table>
                     <TableHeader>
                         <TableHeaderItem>Aria Role</TableHeaderItem>
@@ -514,7 +539,7 @@ export const Presentation = () => {
             </Slide>
             {/* Aria Support */}
             <Slide>
-                <BlueHeader size={6}>Do browsers support Aria?</BlueHeader>
+                <Heading textColor='tertiary' size={6}>Do browsers support Aria?</Heading>
                 Global support is roughly 95% according to <Link style={{ fontStyle: 'none', color: 'inherit' }}
                                                                  href='https://caniuse.com/#feat=wai-aria'>caniuse.com</Link>
             </Slide>
