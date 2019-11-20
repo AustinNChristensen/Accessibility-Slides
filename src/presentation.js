@@ -3,7 +3,6 @@
 import React from 'react';
 import solsticeImage from './assets/solstice.png';
 import { TAB_ORDER_EXAMPLE_URL } from './vars';
-import styled from 'styled-components';
 
 // Import Spectacle Core tags
 import {
