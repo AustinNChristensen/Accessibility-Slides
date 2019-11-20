@@ -3,17 +3,7 @@
 import React from 'react';
 import solsticeImage from './assets/solstice.png';
 import { TAB_ORDER_EXAMPLE_URL } from './vars';
-// intro
-// why accessibility matters
-// types of impairments
-// wai
-// wcag -> checklist & POUR
-// Focus problems
-//  Tab Order
-// Semantics
-//  Landmarks
-// Aria - when great html is not enough
-
+import styled from 'styled-components';
 
 // Import Spectacle Core tags
 import {
@@ -84,9 +74,9 @@ export const Presentation = () => {
             </Slide>
             <Slide bgImage={solsticeImage}/>
             <Slide bgColor='secondary'>
-                <Heading size={1} textColor='tertiary' fit caps>
+                <BlueHeader fit caps>
                     WTF*
-                </Heading>
+                </BlueHeader>
                 <Text textColor='primary' textSize='16px'>
                     * What the Frontend
                 </Text>
@@ -178,7 +168,7 @@ export const Presentation = () => {
             </Slide>
             {/* WCAG Perceivable */}
             <Slide>
-                <Heading>Perceivable</Heading>
+                <BlueHeader>Perceivable</BlueHeader>
                 Is the information presented in a format that the end-user can understand?
                 <Notes>
                     All users must be able to perceive it in some way, using one or more of their senses.
@@ -186,7 +176,7 @@ export const Presentation = () => {
             </Slide>
             {/* WCAG Operable */}
             <Slide>
-                <Heading>Operable</Heading>
+                <BlueHeader>Operable</BlueHeader>
                 <Text>
                     Can the user operate the interface?
                 </Text>
@@ -200,14 +190,14 @@ export const Presentation = () => {
             </Slide>
             {/* WCAG Understandable */}
             <Slide>
-                <Heading>Understandable</Heading>
+                <BlueHeader>Understandable</BlueHeader>
                 <Text>
                     Is the context of information and operations understandable?
                 </Text>
             </Slide>
             {/* WCAG Robust */}
             <Slide>
-                <Heading>Robust</Heading>
+                <BlueHeader>Robust</BlueHeader>
                 <Text>
                     Are you using future-proof methods to ensure accessibility into the future?
                 </Text>
@@ -215,57 +205,79 @@ export const Presentation = () => {
             {/* Techniques for Accessibility */}
             {/* Focus */}
             <Slide>
-                <Heading>
-                    Focus
-                </Heading>
+                <BlueHeader>
+                    Managing Focus
+                </BlueHeader>
             </Slide>
             <Slide>
                 <Text>
                     <Link href='https://webaim.org/standards/wcag/checklist#sc2.1.1'>
                         Guideline 2.1
                     </Link>
-                    &nbsp;states that all functionality should be accessibile using only the keyboard
+                    &nbsp;states that all functionality should be accessible using only the keyboard
                 </Text>
             </Slide>
             <Slide>
                 {/* Make this look better */}
-                <Heading size={3}>Understand Tab Order</Heading>
-                <Text>Focusable by Default</Text>
-                <Text>Ignored by Default</Text>
-                <Text>Overriding Defaults</Text>
+                <BlueHeader size={4}>Understand Tab Order</BlueHeader>
+                <Appear>
+                    <Text>Focusable by Default</Text>
+                </Appear>
+                <Appear>
+                    <Text>Ignored by Default</Text>
+                </Appear>
+                <Appear>
+                    <Text>Overriding Defaults</Text>
+                </Appear>
+            </Slide>
+            <Slide>
+                <BlueHeader size={4}>Focusable by Default</BlueHeader>
+                <Appear>
+                    <Heading size={6}>(Implicit Focus)</Heading>
+                </Appear>
+                <Appear>
+                    <Text>inputs</Text>
+                </Appear>
+                <Appear>
+                    <Text>buttons</Text>
+                </Appear>
+                <Appear>
+                    <Text>select lists</Text>
+                </Appear>
+            </Slide>
+            <Slide>
+                <BlueHeader size={4}>Ignored by Default</BlueHeader>
+                <Appear>
+                    <Text>divs / spans</Text>
+                </Appear>
+                <Appear>
+                    <Text>paragraphs</Text>
+                </Appear>
+                <Appear>
+                    <Text>sections / articles / header / footer</Text>
+                </Appear>
             </Slide>
             <Slide>
                 {/*  Color these + content */}
-                <Heading size={3}>Focusable by Default</Heading>
-                <Heading size={6}>(Implicit Focus)</Heading>
-                <Text>text fields, buttons, select lists</Text>
-            </Slide>
-            <Slide>
-                {/*  Color these + content */}
-                <Heading size={3}>Ignored by Default</Heading>
-                <Text>divs, paragraphs, spans, etc. - they have no interaction</Text>
-            </Slide>
-            <Slide>
-                {/*  Color these + content */}
-                <Heading size={3}>Overriding Default</Heading>
+                <BlueHeader size={3}>Overriding Default</BlueHeader>
                 <Text>Display none - visibility hidden remove element from tab order</Text>
             </Slide>
             <Slide>
                 {/*  Color these + content */}
-                <Heading size={3}>Demo Time!</Heading>
+                <BlueHeader size={3}>Demo Time!</BlueHeader>
                 <Link href={TAB_ORDER_EXAMPLE_URL} target='_blank' rel='noopener noreferrer'>Click here for a
                     demo</Link>
             </Slide>
             {/* Built in Semantics */}
             <Slide>
-                <Heading size={1}>Semantic HTML</Heading>
+                <BlueHeader size={1}>Semantic HTML</BlueHeader>
             </Slide>
             <Slide>
                 <Text>Semantic HTML allows Assistive Technology (AT) to automatically pull context from a page when used
                     correctly.</Text>
             </Slide>
             <Slide>
-                <Heading size={2}>Bad Semantics</Heading>
+                <BlueHeader size={2}>Bad Semantics</BlueHeader>
                 <Text>
                     While poorly written code can cause problems for users who do not need
                     Assistive Technology, these bad practices can make it impossible for users
@@ -273,7 +285,7 @@ export const Presentation = () => {
                 </Text>
             </Slide>
             <Slide>
-                <Heading size={2}>Div</Heading>
+                <BlueHeader size={2}>Div</BlueHeader>
                 <Text>
                     Despite being the most overused HTML element in existence,
                     a div has no semantics and should be used strictly for grouping
@@ -281,47 +293,47 @@ export const Presentation = () => {
                 </Text>
             </Slide>
             <Slide>
-                <Heading size={2}>Span</Heading>
+                <BlueHeader size={2}>Span</BlueHeader>
                 <Text>
                     A span is very similar to a div in it's lack of semantics, but is used
                     primarily for grouping text-like fragments together in-line for styling.
                 </Text>
-                <p>ex: This is a span <span style={{color: 'green'}}>here</span></p>
+                <p>ex: This is a span <span style={{ color: 'green' }}>here</span></p>
             </Slide>
             <Slide>
-                <Heading size={2}>Landmarks & Signposts</Heading>
+                <BlueHeader size={2}>Landmarks & Signposts</BlueHeader>
                 <Text>AT can easily navigate using only Landmarks when used correctly.</Text>
                 <Text>Content outside of landmarks is referred to as being orphaned.</Text>
             </Slide>
             <Slide>
-                <Heading size={2}>Landmarks</Heading>
+                <BlueHeader size={2}>Landmarks</BlueHeader>
             </Slide>
             <Slide>
-                <Heading size={3}>Form</Heading>
+                <BlueHeader size={3}>Form</BlueHeader>
                 <Text>Input elements that can be edited and submitted</Text>
             </Slide>
             <Slide>
-                <Heading size={3}>Table</Heading>
+                <BlueHeader size={3}>Table</BlueHeader>
                 <Text>Groups and displays data by row or column</Text>
             </Slide>
             <Slide>
-                <Heading size={3}>Main</Heading>
+                <BlueHeader size={3}>Main</BlueHeader>
                 <Text>Primary content of page. Only one `main` landmark should exist per page</Text>
             </Slide>
             <Slide>
-                <Heading size={3}>Nav</Heading>
+                <BlueHeader size={3}>Nav</BlueHeader>
                 <Text>Defines navigation links</Text>
             </Slide>
             <Slide>
-                <Heading size={3}>Article</Heading>
+                <BlueHeader size={3}>Article</BlueHeader>
                 <Text>Self-contained content<br/>Should make sense on its own</Text>
             </Slide>
             <Slide>
-                <Heading size={3}>Section</Heading>
+                <BlueHeader size={3}>Section</BlueHeader>
                 <Text>Defines a grouping of content<br />Typically contains a header</Text>
             </Slide>
             <Slide>
-                <Heading size={3}>Article vs Section</Heading>
+                <BlueHeader size={3}>Article vs Section</BlueHeader>
                 <Text>
                     No rules!<br/>
                 </Text>
@@ -357,61 +369,108 @@ export const Presentation = () => {
                 </section>
             </Slide>
             <Slide>
-                <Heading size={3}>Footer</Heading>
+                <BlueHeader size={3}>Footer</BlueHeader>
                 <Text>Typically contains author, copyright, ToU, contact info, etc</Text>
             </Slide>
             <Slide>
-                <Heading size={3}>Header</Heading>
+                <BlueHeader size={3}>Header</BlueHeader>
                 <Text>Contains introductory content</Text>
             </Slide>
             <Slide>
-                <Heading size={3}>Aside</Heading>
+                <BlueHeader size={3}>Aside</BlueHeader>
                 <Text>Defines content related to `main`</Text>
             </Slide>
             <Slide>
-                <Heading size={2}>Text Formatting</Heading>
+                <BlueHeader size={2}>Text Formatting</BlueHeader>
                 <Text>p, h1-h6, blockquote, ul</Text>
             </Slide>
             {/* Extended Semantics with Aria */}
             <Slide>
-                <Heading>Extending Semantics with WAI-ARIA</Heading>
+                <BlueHeader>Extending Semantics with WAI-ARIA</BlueHeader>
             </Slide>
             {/* Aria */}
             {/* TODO - arya Game of Thrones Meme */}
             <Slide bgColor='secondary'>
-                <Heading size={1} textColor='tertiary'>
+                <BlueHeader>
                     Aria Meme here
-                </Heading>
+                </BlueHeader>
             </Slide>
             <Slide>
-                <Heading margin={40}>aria-label</Heading>
-                <Text>Aria-label's completely override default screen reader output and reads the aria-Label value instead.</Text>
+                <BlueHeader>aria-label</BlueHeader>
+                <Text>Aria-label completely overrides default screen reader output and reads the aria-Label value in its
+                    place.</Text>
                 <Code>{`<button aria-label='Click me!'>Hello</button>`}</Code>
-                <Text margin={50} textColor='tertiary'>{`In this example, a screen reader would read aloud ' Click me! ',  rather than ' Hello '.`}</Text>
+                <Text margin={50}
+                      textColor='tertiary'>{`In this example, a screen reader would read aloud ' Click me! ',  rather than ' Hello '.`}</Text>
             </Slide>
             <Slide>
-                <Heading>Aria Labeledby</Heading>
-                <Text>aria-labeledby is similar to aria-label, but is used to associate another element as the descriptor for the labeledby element.</Text>
+                <BlueHeader>Aria Labelledby</BlueHeader>
+                <Text>
+                    aria-labelledby is used to associate another element, using an id, as the descriptor
+                    for the labelled element.
+                </Text>
+                <Code margin={0}>{`<button aria-labelledby='description'>Hello</button>`}</Code>
+                <Code margin={4}>{`<p id='description'>Click this button to learn more</p>`}</Code>
+                <Text
+                    textColor='tertiary'>{`In this case, a screen reader would read aloud ' Hello, Click this button to learn more '.`}
+                </Text>
             </Slide>
             <Slide>
-                <Heading>Aria Forms</Heading>
-                <Text>Aria Required, Aria invalid TODO</Text>
+                <BlueHeader>Aria Live</BlueHeader>
+                <Text>aria-live notifies screen readers that updates to this dom node should be read to the user</Text>
+                <Code>{`<p aria-live='polite' />`}</Code>
+                <Code>{`<p aria-live='assertive' />`}</Code>
             </Slide>
             <Slide>
-                <Heading>Aria Busy</Heading>
-                <Text> TODO </Text>
+                <BlueHeader>Aria Busy</BlueHeader>
+                <Text>aria-busy explains to a user that the node and / or its subtree is in the process of
+                    updating.</Text>
+                <Code>{`<section aria-busy='true'>Loading...</section>`}</Code>
             </Slide>
             <Slide>
-                <Heading>Aria Progress Bar</Heading>
-                <Text>Aria-valuenow, valuemin, valuemax TODO</Text>
+                <BlueHeader>Aria Hidden</BlueHeader>
+                <Text>aria-hidden hides the node element entirely from the Accessibility Tree</Text>
+                <Code>{`<img aria-hidden='true' />`}</Code>
             </Slide>
             <Slide>
-                <Heading>Aria Hidden</Heading>
-                <Text>TODO </Text>
+                <BlueHeader>Aria Forms</BlueHeader>
+                <Layout>
+                    <Fill>
+                        <Fit>
+                            <Appear>
+                                <Text margin={20}>aria-required</Text>
+                            </Appear>
+                            <Appear>
+                                <Text margin={20}>aria-invalid</Text>
+                            </Appear>
+                            <Appear>
+                                <Text margin={20}>aria-checked</Text>
+                            </Appear>
+                        </Fit>
+                    </Fill>
+                </Layout>
+            </Slide>
+            <Slide>
+                <BlueHeader>Aria Progress Bar</BlueHeader>
+                <Layout>
+                    <Fill>
+                        <Fit>
+                            <Appear>
+                                <Text margin={20}>aria-valuenow</Text>
+                            </Appear>
+                            <Appear>
+                                <Text margin={20}>aria-valuemax</Text>
+                            </Appear>
+                            <Appear>
+                                <Text margin={20}>aria-valuemin</Text>
+                            </Appear>
+                        </Fit>
+                    </Fill>
+                </Layout>
             </Slide>
             {/* Aria Role Equivalents */}
             <Slide>
-                <Heading>Aria Roles</Heading>
+                <BlueHeader>Aria Roles</BlueHeader>
                 <Table>
                     <TableHeader>
                         <TableHeaderItem>Aria Role</TableHeaderItem>
@@ -451,11 +510,10 @@ export const Presentation = () => {
             </Slide>
             {/* Aria Support */}
             <Slide>
-                <Heading size={6}>Do browsers support Aria?</Heading>
-                Global support is roughly 95% according to <Link style={{fontStyle: 'none', color: 'inherit'}}
+                <BlueHeader size={6}>Do browsers support Aria?</BlueHeader>
+                Global support is roughly 95% according to <Link style={{ fontStyle: 'none', color: 'inherit' }}
                                                                  href='https://caniuse.com/#feat=wai-aria'>caniuse.com</Link>
             </Slide>
-
             <Slide>
                 <List>
                     <ListItem>Accessible-by-default components</ListItem>
@@ -523,3 +581,19 @@ export const Presentation = () => {
         </Deck>
     );
 };
+
+
+const BlueHeader = styled(Heading)`
+    font-color: ${theme.tertiary};
+    margin-bottom: 15px;
+`;
+
+const WhiteHeader = styled(Heading)`
+    font-color: ${theme.primary};
+    margin-bottom: 15px;
+`;
+
+const Blackheader = styled(Heading)`
+    font-color: ${theme.secondary};
+    margin-bottom: 15px;
+`;
