@@ -389,11 +389,15 @@ export const Presentation = () => {
                 <BlueHeader>Extending Semantics with WAI-ARIA</BlueHeader>
             </Slide>
             {/* Aria */}
-            {/* TODO - arya Game of Thrones Meme */}
             <Slide bgColor='secondary'>
                 <BlueHeader>
-                    Aria Meme here
+                    Arya Stark???
                 </BlueHeader>
+            </Slide>
+            <Slide bgColor='secondary'>
+                <video autoPlay loop>
+                    <source src="https://media.giphy.com/media/WsFsLN9BNYYOZ0jxUM/giphy.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" />
+                </video>
             </Slide>
             <Slide>
                 <BlueHeader>aria-label</BlueHeader>
