@@ -298,43 +298,75 @@ export const Presentation = () => {
             </Slide>
             <Slide>
                 <Heading size={3}>Form</Heading>
-                <Text>TODO</Text>
+                <Text>Input elements that can be edited and submitted</Text>
             </Slide>
             <Slide>
                 <Heading size={3}>Table</Heading>
-                <Text>TODO</Text>
+                <Text>Groups and displays data by row or column</Text>
             </Slide>
             <Slide>
                 <Heading size={3}>Main</Heading>
-                <Text>TODO</Text>
+                <Text>Primary content of page. Only one `main` landmark should exist per page</Text>
             </Slide>
             <Slide>
                 <Heading size={3}>Nav</Heading>
-                <Text>TODO</Text>
+                <Text>Defines navigation links</Text>
             </Slide>
             <Slide>
                 <Heading size={3}>Article</Heading>
-                <Text>TODO</Text>
+                <Text>Self-contained content<br/>Should make sense on its own</Text>
             </Slide>
             <Slide>
                 <Heading size={3}>Section</Heading>
-                <Text>TODO</Text>
+                <Text>Defines a grouping of content<br />Typically contains a header</Text>
             </Slide>
             <Slide>
                 <Heading size={3}>Article vs Section</Heading>
-                <Text>TODO</Text>
+                <Text>
+                    No rules!<br/>
+                </Text>
+                <section style={{ position: 'absolute', bottom: '225px', left: 0, right: 0, display: 'flex', fontSize: '20px'}}>
+                    <article style={{ flex: 1 }}>
+                        <code>
+                            &lt;Article&gt;<br />
+                            <span style={{ marginLeft: '75px' }}>&lt;Article/&gt;</span><br />
+                            &lt;/Article&gt;<br />
+                        </code>
+                    </article>
+                    <article style={{ flex: 1 }}>
+                        <code>
+                            &lt;Article&gt;<br />
+                            <span style={{ marginLeft: '75px' }}>&lt;Section/&gt;</span><br />
+                            &lt;/Article&gt;<br />
+                        </code>
+                    </article>
+                    <article style={{ flex: 1 }}>
+                        <code>
+                            &lt;Section&gt;<br />
+                            <span style={{ marginLeft: '75px' }}>&lt;Article/&gt;</span><br />
+                            &lt;/Section&gt;<br />
+                        </code>
+                    </article>
+                    <article style={{ flex: 1 }}>
+                        <code>
+                            &lt;Section&gt;<br />
+                            <span style={{ marginLeft: '75px' }}>&lt;Section/&gt;</span><br />
+                            &lt;/Section&gt;<br />
+                        </code>
+                    </article>
+                </section>
             </Slide>
             <Slide>
                 <Heading size={3}>Footer</Heading>
-                <Text>TODO</Text>
+                <Text>Typically contains author, copyright, ToU, contact info, etc</Text>
             </Slide>
             <Slide>
                 <Heading size={3}>Header</Heading>
-                <Text>TODO</Text>
+                <Text>Contains introductory content</Text>
             </Slide>
             <Slide>
                 <Heading size={3}>Aside</Heading>
-                <Text>TODO</Text>
+                <Text>Defines content related to `main`</Text>
             </Slide>
             <Slide>
                 <Heading size={2}>Text Formatting</Heading>
