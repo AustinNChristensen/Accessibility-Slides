@@ -20,7 +20,7 @@ import {
     Fill,
     Fit,
     // CodePane,
-    ComponentPlayground,
+    // ComponentPlayground,
     Table,
     TableHeader,
     TableHeaderItem,
@@ -51,9 +51,6 @@ const theme = createTheme(
 );
 
 // todo - notes -> mark slides per person
-// todo appear affects
-// todo - add the wave
-// todo more styles
 
 export const Presentation = () => {
     return (
@@ -117,9 +114,13 @@ export const Presentation = () => {
                 </Appear>
                 <Appear>
                     {/* Some type of checklist image??? */}
-                    <Text textColor='tertiary'>
-                        <Link href='https://webaim.org/' target='_blank' rel="noopener noreferrer">WAI Checklist</Link>
-                    </Text>
+                    <List textColor='tertiary'>
+                        <ListItem bulletStyle='greenCheck' >
+                            <Link href='https://webaim.org/' target='_blank' rel="noopener noreferrer" textColor='tertiary'>
+                                WAI Checklist
+                            </Link>
+                        </ListItem>
+                    </List>
                 </Appear>
             </Slide>
             {/* WCAG 2.0 Definition */}
@@ -188,7 +189,6 @@ export const Presentation = () => {
                     </table>
                 </Notes>
             </Slide>
-            {/* TODO - holding a baby is a situational impairment */}
             {/* WCAG Perceivable */}
             <Slide>
                 <Heading textColor='tertiary'>Perceivable</Heading>
@@ -449,51 +449,46 @@ export const Presentation = () => {
                 </Appear>
             </Slide>
 
-            {/* TODO - fix this slide */}
             <Slide bgColor='tertiary'>
                 <Heading textColor='primary' size={2}>Article vs. Section</Heading>
                 <Appear>
-                    <Text margin={25}>
-                        No Offical Rules!
-                    </Text>
-                </Appear>
-                <Appear>
                     <div>
+                        <Text margin={25}>
+                            No Offical Rules!
+                        </Text>
                         <Layout>
                             <Fill>
                                 <code>
-                                    &lt;Article&gt;<br />
-                                    <span style={{ marginLeft: '75px' }}>&lt;Article/&gt;</span><br />
-                                    &lt;/Article&gt;<br />
+                                    &lt;Article&gt;<br/>
+                                    <span style={{ marginLeft: '75px' }}>&lt;Article/&gt;</span><br/>
+                                    &lt;/Article&gt;<br/>
                                 </code>
                             </Fill>
                             <Fill>
                                 <code>
-                                    &lt;Article&gt;<br />
-                                    <span style={{ marginLeft: '75px' }}>&lt;Section/&gt;</span><br />
-                                    &lt;/Article&gt;<br />
+                                    &lt;Article&gt;<br/>
+                                    <span style={{ marginLeft: '75px' }}>&lt;Section/&gt;</span><br/>
+                                    &lt;/Article&gt;<br/>
                                 </code>
                             </Fill>
                             <Fill>
                                 <code>
-                                    &lt;Section&gt;<br />
-                                    <span style={{ marginLeft: '75px' }}>&lt;Article/&gt;</span><br />
-                                    &lt;/Section&gt;<br />
+                                    &lt;Section&gt;<br/>
+                                    <span style={{ marginLeft: '75px' }}>&lt;Article/&gt;</span><br/>
+                                    &lt;/Section&gt;<br/>
                                 </code>
                             </Fill>
                             <Fill>
                                 <code>
-                                    &lt;Section&gt;<br />
-                                    <span style={{ marginLeft: '75px' }}>&lt;Section/&gt;</span><br />
-                                    &lt;/Section&gt;<br />
+                                    &lt;Section&gt;<br/>
+                                    <span style={{ marginLeft: '75px' }}>&lt;Section/&gt;</span><br/>
+                                    &lt;/Section&gt;<br/>
                                 </code>
                             </Fill>
                         </Layout>
-
                     </div>
                 </Appear>
             </Slide>
-
 
             <Slide bgColor='tertiary'>
                 <Heading textColor='primary' size={2}>Footer</Heading>
@@ -507,13 +502,11 @@ export const Presentation = () => {
                         Copyright
                     </Text>
                 </Appear>
-
                 <Appear>
                     <Text margin={25}>
                         Terms of Use
                     </Text>
                 </Appear>
-
                 <Appear>
                     <Text margin={25}>
                         Contact Info
@@ -577,12 +570,22 @@ export const Presentation = () => {
                 <Heading textColor='tertiary'>Extending Semantics with WAI-ARIA</Heading>
             </Slide>
             {/* Aria */}
-            <Slide bgColor='secondary' style={{ position: 'relative'}}>
+            <Slide bgColor='secondary' style={{ position: 'relative' }}>
                 <Heading textColor='tertiary'>
                     Arya Stark???
                 </Heading>
                 <Appear>
-                    <video autoPlay loop style={{ height: '100%', position: 'absolute', top: '0', left: '30%', right: '30%' }}>
+                    <video
+                        autoPlay
+                        loop
+                        style={{
+                            height: '100%',
+                            position: 'absolute',
+                            width: '100%',
+                            top: '0',
+                            left: '50%',
+                            marginLeft: '-50%'
+                        }}>
                         <source src="https://media.giphy.com/media/WsFsLN9BNYYOZ0jxUM/giphy.mp4"
                                 type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;"/>
                     </video>
@@ -594,44 +597,82 @@ export const Presentation = () => {
                     Attributes used to make web content and applications more accessible to people with disabilities
                 </Notes>
             </Slide>
+            <Slide bgColor='tertiary'>
+                <Text textColor='primary' margin={25}>
+                    Accessible Rich Internet Applications (Aria) is a set of attributes established to help make
+                    dynamic web applications easier for AT to parse and interpret.
+                </Text>
+                <Appear>
+                    <Text textColor='secondary'>
+                        Global support is roughly 95% according to
+                        <Link style={{ fontStyle: 'none', color: 'inherit' }} href='https://caniuse.com/#feat=wai-aria'>
+                            caniuse.com
+                        </Link>
+                    </Text>
+                </Appear>
+            </Slide>
             <Slide>
                 <Heading textColor='tertiary'>aria-label</Heading>
-                <Text margin={10}>Aria-label completely overrides default screen reader output and reads the aria-Label
-                    value in its
-                    place.</Text>
-                <Code>{`<button aria-label='Click me!'>Hello</button>`}</Code>
-                <Text margin={50}
-                      textColor='tertiary'>{`In this example, a screen reader would read aloud ' Click me! ',  rather than ' Hello '.`}</Text>
+                <Appear>
+                    <div>
+                        <Text margin={10}>
+                            Aria-label completely overrides default screen reader output and reads
+                            the aria-Label value in its place.
+                        </Text>
+                        <Code>{`<button aria-label='Click me!'>Hello</button>`}</Code>
+                        <Text margin={50} textColor='tertiary'>
+                            {`In this example, a screen reader would read aloud ' Click me! ',  rather than ' Hello '.`}
+                        </Text>
+                    </div>
+                </Appear>
             </Slide>
             <Slide>
                 <Heading textColor='tertiary'>Aria Labelledby</Heading>
-                <Text margin={10}>
-                    aria-labelledby is used to associate another element, using an id, as the descriptor
-                    for the labelled element.
-                </Text>
-                <Code margin={0}>{`<button aria-labelledby='description'>Hello</button>`}</Code>
-                <Code margin={4}>{`<p id='description'>Click this button to learn more</p>`}</Code>
-                <Text
-                    textColor='tertiary'>{`In this case, a screen reader would read aloud ' Hello, Click this button to learn more '.`}
-                </Text>
+                <Appear>
+                    <div>
+                        <Text margin={10}>
+                            aria-labelledby is used to associate another element, using an id, as the descriptor
+                            for the labelled element.
+                        </Text>
+                        <Code margin={0}>{`<button aria-labelledby='description'>Hello</button>`}</Code>
+                        <Code margin={4}>{`<p id='description'>Click this button to learn more</p>`}</Code>
+                        <Text
+                            textColor='tertiary'>{`In this case, a screen reader would read aloud ' Hello, Click this button to learn more '.`}
+                        </Text>
+                    </div>
+                </Appear>
             </Slide>
             <Slide>
                 <Heading textColor='tertiary'>Aria Live</Heading>
-                <Text margin={10}>aria-live notifies screen readers that updates to this dom node should be read to the
-                    user</Text>
-                <Code>{`<p aria-live='polite' />`}</Code>
-                <Code>{`<p aria-live='assertive' />`}</Code>
+                <Appear>
+                    <div>
+                        <Text margin={10}>aria-live notifies screen readers that updates to this dom node should be read
+                            to the
+                            user</Text>
+                        <Code>{`<p aria-live='polite' />`}</Code>
+                        <Code>{`<p aria-live='assertive' />`}</Code>
+                    </div>
+                </Appear>
             </Slide>
             <Slide>
                 <Heading textColor='tertiary'>Aria Busy</Heading>
-                <Text margin={10}>aria-busy explains to a user that the node and / or its subtree is in the process of
-                    updating.</Text>
-                <Code>{`<section aria-busy='true'>Loading...</section>`}</Code>
+                <Appear>
+                    <div>
+                        <Text margin={10}>aria-busy explains to a user that the node and / or its subtree is in the
+                            process of
+                            updating.</Text>
+                        <Code>{`<section aria-busy='true'>Loading...</section>`}</Code>
+                    </div>
+                </Appear>
             </Slide>
             <Slide>
                 <Heading textColor='tertiary'>Aria Hidden</Heading>
-                <Text margin={10}>aria-hidden hides the node element entirely from the Accessibility Tree</Text>
-                <Code>{`<img aria-hidden='true' />`}</Code>
+                <Appear>
+                    <div>
+                        <Text margin={10}>aria-hidden hides the node element entirely from the Accessibility Tree</Text>
+                        <Code>{`<img src='' alt='' aria-hidden='true' />`}</Code>
+                    </div>
+                </Appear>
             </Slide>
             <Slide>
                 <Heading textColor='tertiary'>Aria Forms</Heading>
@@ -709,58 +750,22 @@ export const Presentation = () => {
                     </TableBody>
                 </Table>
             </Slide>
-            {/* Aria Support */}
             <Slide>
-                <Heading textColor='tertiary' size={6}>Do browsers support Aria?</Heading>
-                Global support is roughly 95% according to <Link style={{ fontStyle: 'none', color: 'inherit' }}
-                                                                 href='https://caniuse.com/#feat=wai-aria'>caniuse.com</Link>
+                <Heading textColor='tertiary'>How can this all be managed?</Heading>
+                <Appear>
+                    <div>
+                        <Text margin={25}>
+                            The easiest, and arguably best, way to manage accessibility is by building, maintaining, and
+                            using
+                            'Accessible by Default' components within your component library.
+                        </Text>
+                        <Code>{`<img src='' aria-hidden='true' alt='' />`}</Code>
+                    </div>
+                </Appear>
             </Slide>
-            <Slide>
-                <List>
-                    <ListItem>Accessible-by-default components</ListItem>
-                </List>
-            </Slide>
-            {/* Playground Example Attempt */}
             <Slide bgColor='tertiary'>
-                <ComponentPlayground lang='jsx' margin="20px auto" overflow="overflow"/>
+                <Heading textColor='primary'>Thank you!</Heading>
             </Slide>
-            {/* Heading Examples */}
-            <Slide bgColor="tertiary">
-                <Heading size={6} textColor="primary" caps>
-                    Typography
-                </Heading>
-                <Heading size={1} textColor="secondary">
-                    Heading 1
-                </Heading>
-                <Heading size={2} textColor="secondary">
-                    Heading 2
-                </Heading>
-                <Heading size={3} textColor="secondary">
-                    Heading 3
-                </Heading>
-                <Heading size={4} textColor="secondary">
-                    Heading 4
-                </Heading>
-                <Heading size={5} textColor="secondary">
-                    Heading 5
-                </Heading>
-                <Text size={6} textColor="secondary">
-                    Standard text
-                </Text>
-            </Slide>
-            {/* List Example */}
-            <Slide bgColor="primary" textColor="tertiary">
-                <Heading size={6} textColor="secondary" caps>
-                    Standard List
-                </Heading>
-                <List>
-                    <ListItem>Item 1</ListItem>
-                    <ListItem>Item 2</ListItem>
-                    <ListItem>Item 3</ListItem>
-                    <ListItem>Item 4</ListItem>
-                </List>
-            </Slide>
-
             {/* Definitions */}
             <Slide bgColor='tertiary'>
                 <Appear>
