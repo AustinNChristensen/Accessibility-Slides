@@ -178,6 +178,15 @@ export const Presentation = () => {
                         </Appear>
                     </Fill>
                 </Layout>
+                <Notes>
+                    <table>
+                        <tr><th></th><th>Temporary</th><th>Situational</th><th>Permanent</th></tr>
+                        <tr><th>Visual</th><td>Cataracts</td><td>Distracted Driver</td><td>Blind</td></tr>
+                        <tr><th>Motor</th><td>Arm Injury</td><td>Holding Baby</td><td>One Arm</td></tr>
+                        <tr><th>Hearing</th><td>Ear Infection</td><td>Bartender</td><td>Deaf</td></tr>
+                        <tr><th>Cognitive</th><td>Laryngitis</td><td>Heavy Accent</td><td>Non-Verbal</td></tr>
+                    </table>
+                </Notes>
             </Slide>
             {/* TODO - holding a baby is a situational impairment */}
             {/* WCAG Perceivable */}
@@ -449,36 +458,39 @@ export const Presentation = () => {
                     </Text>
                 </Appear>
                 <Appear>
-                <Layout>
-                    <Fill>
-                        <code>
-                            &lt;Article&gt;<br/>
-                            <span style={{ marginLeft: '75px' }}>&lt;Article/&gt;</span><br/>
-                            &lt;/Article&gt;<br/>
-                        </code>
-                    </Fill>
-                    <Fill>
-                        <code>
-                            &lt;Article&gt;<br/>
-                            <span style={{ marginLeft: '75px' }}>&lt;Section/&gt;</span><br/>
-                            &lt;/Article&gt;<br/>
-                        </code>
-                    </Fill>
-                    <Fill>
-                        <code>
-                            &lt;Section&gt;<br/>
-                            <span style={{ marginLeft: '75px' }}>&lt;Article/&gt;</span><br/>
-                            &lt;/Section&gt;<br/>
-                        </code>
-                    </Fill>
-                    <Fill>
-                        <code>
-                            &lt;Section&gt;<br/>
-                            <span style={{ marginLeft: '75px' }}>&lt;Section/&gt;</span><br/>
-                            &lt;/Section&gt;<br/>
-                        </code>
-                    </Fill>
-                </Layout>
+                    <div>
+                        <Layout>
+                            <Fill>
+                                <code>
+                                    &lt;Article&gt;<br />
+                                    <span style={{ marginLeft: '75px' }}>&lt;Article/&gt;</span><br />
+                                    &lt;/Article&gt;<br />
+                                </code>
+                            </Fill>
+                            <Fill>
+                                <code>
+                                    &lt;Article&gt;<br />
+                                    <span style={{ marginLeft: '75px' }}>&lt;Section/&gt;</span><br />
+                                    &lt;/Article&gt;<br />
+                                </code>
+                            </Fill>
+                            <Fill>
+                                <code>
+                                    &lt;Section&gt;<br />
+                                    <span style={{ marginLeft: '75px' }}>&lt;Article/&gt;</span><br />
+                                    &lt;/Section&gt;<br />
+                                </code>
+                            </Fill>
+                            <Fill>
+                                <code>
+                                    &lt;Section&gt;<br />
+                                    <span style={{ marginLeft: '75px' }}>&lt;Section/&gt;</span><br />
+                                    &lt;/Section&gt;<br />
+                                </code>
+                            </Fill>
+                        </Layout>
+
+                    </div>
                 </Appear>
             </Slide>
 
@@ -576,11 +588,11 @@ export const Presentation = () => {
                     </video>
                 </Appear>
             </Slide>
-            <Slide bgColor='secondary'>
-
-            </Slide>
             <Slide>
-                Define Aria
+                <Heading>Accessible Rich Internet Applications</Heading>
+                <Notes>
+                    Attributes used to make web content and applications more accessible to people with disabilities
+                </Notes>
             </Slide>
             <Slide>
                 <Heading textColor='tertiary'>aria-label</Heading>
