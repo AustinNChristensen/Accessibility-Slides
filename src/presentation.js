@@ -762,9 +762,9 @@ export const Presentation = () => {
                         <Code>{`<img src='' aria-hidden='true' alt='' />`}</Code>
                     </div>
                 </Appear>
-            </Slide>
-            <Slide bgColor='tertiary'>
-                <Heading textColor='primary'>Thank you!</Heading>
+                <Notes>
+                    Tie back into Robust WCAG principle
+                </Notes>
             </Slide>
             {/* Definitions */}
             <Slide bgColor='tertiary'>
@@ -783,6 +783,9 @@ export const Presentation = () => {
                         WCAG 2.0 -> Web Content Accessibility Guidelines (2.0)
                     </Text>
                 </Appear>
+            </Slide>
+            <Slide bgColor='tertiary'>
+                <Heading textColor='primary'>Thank you!</Heading>
             </Slide>
         </Deck>
     );
