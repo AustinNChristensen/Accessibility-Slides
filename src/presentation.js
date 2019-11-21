@@ -307,10 +307,12 @@ export const Presentation = () => {
                     <div>
                         <Text textColor='primary' margin={25}>Display: none</Text>
                         <Text textColor='primary' margin={25}>visibility: hidden</Text>
+                        <Text textColor='primary' margin={25}>tab-index='-1, 1, 0, ...n'</Text>
                     </div>
                 </Appear>
                 <Notes>
                     This will remove the element from the tab order and hide it visibly, but it will be in the DOM
+                    -1 is remove, 0 is add, 1+ forced order
                 </Notes>
             </Slide>
             <Slide>
