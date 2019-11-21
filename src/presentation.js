@@ -51,6 +51,11 @@ const theme = createTheme(
     }
 );
 
+// todo - notes -> mark slides per person
+// todo appear affects
+// todo - add the wave
+// todo more styles
+
 export const Presentation = () => {
     return (
         <Deck
@@ -104,8 +109,9 @@ export const Presentation = () => {
                 </Appear>
                 <Appear>
                     {/* Some type of checklist image??? */}
-                    <Text textColor='tertiary'><Link href='https://webaim.org/' target='_blank'
-                                                     rel="noopener noreferrer">WAI Checklist</Link></Text>
+                    <Text textColor='tertiary'>
+                        <Link href='https://webaim.org/' target='_blank' rel="noopener noreferrer">WAI Checklist</Link>
+                    </Text>
                 </Appear>
             </Slide>
             {/* WCAG 2.0 Definition */}
@@ -165,10 +171,15 @@ export const Presentation = () => {
                     </Fill>
                 </Layout>
             </Slide>
+            {/* TODO - holding a baby is a situational impairment */}
             {/* WCAG Perceivable */}
             <Slide>
                 <Heading textColor='tertiary'>Perceivable</Heading>
-                Is the information presented in a format that the end-user can understand?
+                <Appear>
+                    <Text margin={15}>
+                        Is the information presented in a format that the end-user can understand?
+                    </Text>
+                </Appear>
                 <Notes>
                     All users must be able to perceive it in some way, using one or more of their senses.
                 </Notes>
@@ -176,167 +187,260 @@ export const Presentation = () => {
             {/* WCAG Operable */}
             <Slide>
                 <Heading textColor='tertiary'>Operable</Heading>
-                <Text margin={10}>
-                    Can the user operate the interface?
-                </Text>
+                <Appear>
+                    <Text margin={15}>
+                        Can the user operate the interface?
+                    </Text>
+                </Appear>
                 <Notes>
-                    Buttons
-                    Links
-                    Modals
+                    Buttons,
+                    Links,
+                    Modals,
                     etc.
-                    Hover without a mouse?
+                    Are states restricted to hovering?
                 </Notes>
             </Slide>
             {/* WCAG Understandable */}
             <Slide>
                 <Heading textColor='tertiary'>Understandable</Heading>
-                <Text margin={10}>
-                    Is the context of information and operations understandable?
-                </Text>
+                <Appear>
+                    <Text margin={15}>
+                        Is the context of information and operations understandable?
+                    </Text>
+                </Appear>
+                <Notes>
+                    Many government standards require language to be structured for a 6th grade reading level
+                </Notes>
             </Slide>
             {/* WCAG Robust */}
             <Slide>
                 <Heading textColor='tertiary'>Robust</Heading>
-                <Text margin={10}>
-                    Are you using future-proof methods to ensure accessibility into the future?
-                </Text>
+                <Appear>
+                    <Text margin={15}>
+                        Are you using future-proof methods to ensure accessibility into the future?
+                    </Text>
+                </Appear>
+                <Notes>
+                    Ecosystem in tech is constantly changing, as are laws.
+                    Canada has strict laws around accessibility,
+                    should be followed as a gold standard
+                </Notes>
             </Slide>
             {/* Techniques for Accessibility */}
+            <Slide bgColor='tertiary'>
+                <Heading textColor='secondary'>Techniques for Accessibility</Heading>
+            </Slide>
             {/* Focus */}
             <Slide>
                 <Heading textColor='tertiary'>
                     Managing Focus
                 </Heading>
-            </Slide>
-            <Slide>
-                <Text margin={10}>
-                    <Link href='https://webaim.org/standards/wcag/checklist#sc2.1.1'>
-                        Guideline 2.1
-                    </Link>
-                    &nbsp;states that all functionality should be accessible using only the keyboard
-                </Text>
-            </Slide>
-            <Slide>
-                {/* Make this look better */}
-                <Heading textColor='tertiary' size={4}>Understand Tab Order</Heading>
                 <Appear>
-                    <Text margin={10}>Focusable by Default</Text>
-                </Appear>
-                <Appear>
-                    <Text margin={10}>Ignored by Default</Text>
-                </Appear>
-                <Appear>
-                    <Text margin={10}>Overriding Defaults</Text>
+                    <Text margin={15}>
+                        <Link href='https://webaim.org/standards/wcag/checklist#sc2.1.1'>
+                            Guideline 2.1
+                        </Link>
+                        &nbsp;states that all functionality should be accessible using only the keyboard
+                    </Text>
                 </Appear>
             </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={4}>Focusable by Default</Heading>
+            <Slide bgColor='secondary'>
+                <Heading textColor='tertiary' size={4} margin={10}>Understand Tab Order</Heading>
                 <Appear>
-                    <Heading size={6}>(Implicit Focus)</Heading>
+                    <Text textColor='primary' margin={25}>Focusable by Default</Text>
                 </Appear>
                 <Appear>
-                    <Text margin={10}>inputs</Text>
+                    <Text textColor='primary' margin={25}>Ignored by Default</Text>
                 </Appear>
                 <Appear>
-                    <Text margin={10}>buttons</Text>
-                </Appear>
-                <Appear>
-                    <Text margin={10}>select lists</Text>
+                    <Text textColor='primary' margin={25}>Overriding Defaults</Text>
                 </Appear>
             </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={4}>Ignored by Default</Heading>
+            <Slide bgColor='secondary'>
+                <Heading textColor='tertiary' size={4} margin={10}>Focusable by Default</Heading>
                 <Appear>
-                    <Text margin={10}>divs / spans</Text>
+                    <Heading size={6} textColor='tertiary'>(Implicit Focus)</Heading>
                 </Appear>
                 <Appear>
-                    <Text margin={10}>paragraphs</Text>
+                    <Text textColor='primary' margin={25}>inputs</Text>
                 </Appear>
                 <Appear>
-                    <Text margin={10}>sections / articles / header / footer</Text>
+                    <Text textColor='primary' margin={25}>buttons</Text>
+                </Appear>
+                <Appear>
+                    <Text textColor='primary' margin={25}>select tags</Text>
                 </Appear>
             </Slide>
-            <Slide>
-                {/*  Color these + content */}
-                <Heading textColor='tertiary' size={3}>Overriding Default</Heading>
-                <Text margin={10}>Display none - visibility hidden remove element from tab order</Text>
+            <Slide bgColor='secondary'>
+                <Heading textColor='tertiary' size={4} margin={10}>Ignored by Default</Heading>
+                <Appear>
+                    <Text textColor='primary' margin={25}>divs / spans</Text>
+                </Appear>
+                <Appear>
+                    <Text textColor='primary' margin={25}>paragraphs</Text>
+                </Appear>
+                <Appear>
+                    <Text textColor='primary' margin={25}>sections / articles / header / footer</Text>
+                </Appear>
+            </Slide>
+
+            <Slide bgColor='secondary'>
+                <Heading textColor='tertiary' size={4} margin={10}>Overriding Defaults</Heading>
+                <Appear>
+                    <div>
+                        <Text textColor='primary' margin={25}>Display: none</Text>
+                        <Text textColor='primary' margin={25}>visibility: hidden</Text>
+                    </div>
+                </Appear>
+                <Notes>
+                    This will remove the element from the tab order and hide it visibly, but it will be in the DOM
+                </Notes>
             </Slide>
             <Slide>
-                {/*  Color these + content */}
                 <Heading textColor='tertiary' size={3}>Demo Time!</Heading>
-                <Link href={TAB_ORDER_EXAMPLE_URL} target='_blank' rel='noopener noreferrer'>Click here for a
-                    demo</Link>
+                <Link href={TAB_ORDER_EXAMPLE_URL} target='_blank' rel='noopener noreferrer'>
+                    Click here for a demo
+                </Link>
             </Slide>
             {/* Built in Semantics */}
             <Slide>
                 <Heading textColor='tertiary' size={1}>Semantic HTML</Heading>
             </Slide>
-            <Slide>
-                <Text margin={10}>Semantic HTML allows Assistive Technology (AT) to automatically pull context from a
-                    page when used
-                    correctly.</Text>
-            </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={2}>Bad Semantics</Heading>
-                <Text margin={10}>
-                    While poorly written code can cause problems for users who do not need
-                    Assistive Technology, these bad practices can make it impossible for users
-                    who rely on AT to use your site.
+            <Slide bgColor='secondary'>
+                <Text margin={25} textColor='tertiary'>
+                    Semantic HTML allows Assistive Technology (AT) to automatically pull context from a page when used
+                    correctly.
                 </Text>
             </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={2}>Div</Heading>
-                <Text margin={10}>
-                    Despite being the most overused HTML element in existence,
-                    a div has no semantics and should be used strictly for grouping
-                    semantic tags for styling purposes only.
-                </Text>
+            <Slide bgColor='tertiary'>
+                <Heading textColor='primary' size={2}>Improper Semantics</Heading>
+                <Appear>
+                    <Text margin={25}>
+                        While poorly written code can cause problems for users who do not need
+                        Assistive Technology, these bad practices can make it impossible for users
+                        who rely on AT to use your site.
+                    </Text>
+                </Appear>
             </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={2}>Span</Heading>
-                <Text margin={10}>
-                    A span is very similar to a div in it's lack of semantics, but is used
-                    primarily for grouping text-like fragments together in-line for styling.
-                </Text>
-                <p>ex: This is a span <span style={{ color: 'green' }}>here</span></p>
+            <Slide bgColor='tertiary'>
+                <Heading textColor='primary' size={2}>Div</Heading>
+                <Appear>
+                    <Text margin={25}>
+                        Despite being the most overused HTML element in existence,
+                        a div has no semantics and should be used strictly for grouping
+                        semantic tags for styling purposes only.
+                    </Text>
+                </Appear>
             </Slide>
-            <Slide>
+
+            <Slide bgColor='tertiary'>
+                <Heading textColor='primary' size={2}>Span</Heading>
+                <Appear>
+                    <Text margin={25}>
+                        A span is very similar to a div in it's lack of semantics, but is used
+                        primarily for grouping text-like fragments together in-line for styling.
+                    </Text>
+                </Appear>
+                <Appear>
+                    <p>ex: This is a span <span style={{ color: 'yellow' }}>here</span></p>
+                </Appear>
+            </Slide>
+
+            <Slide bgColor='secondary'>
                 <Heading textColor='tertiary' size={2}>Landmarks & Signposts</Heading>
-                <Text margin={10}>AT can easily navigate using only Landmarks when used correctly.</Text>
-                <Text margin={10}>Content outside of landmarks is referred to as being orphaned.</Text>
+                <Appear>
+                    <Text margin={25} textColor='primary'>
+                        AT can easily navigate using only Landmarks when used correctly.
+                    </Text>
+                </Appear>
+                <Appear>
+                    <Text margin={25} textColor='primary'>
+                        Content outside of landmarks is referred to as being orphaned.
+                    </Text>
+                </Appear>
             </Slide>
             <Slide>
                 <Heading textColor='tertiary' size={2}>Landmarks</Heading>
             </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={3}>Form</Heading>
-                <Text margin={10}>Input elements that can be edited and submitted</Text>
+
+            <Slide bgColor='tertiary'>
+                <Heading textColor='primary' size={2}>Form</Heading>
+                <Appear>
+                    <Text margin={25}>
+                        Container for input elements that can be edited and submitted
+                    </Text>
+                </Appear>
             </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={3}>Table</Heading>
-                <Text margin={10}>Groups and displays data by row or column</Text>
+
+            <Slide bgColor='tertiary'>
+                <Heading textColor='primary' size={2}>Table</Heading>
+                <Appear>
+                    <Text margin={25}>
+                        Groups and displays data by row and column
+                    </Text>
+                </Appear>
             </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={3}>Main</Heading>
-                <Text margin={10}>Primary content of page. Only one `main` landmark should exist per page</Text>
+
+            <Slide bgColor='tertiary'>
+                <Heading textColor='primary' size={2}>Main</Heading>
+                <Appear>
+                    <Text margin={25}>
+                        Primary content of a page
+                    </Text>
+                </Appear>
+                <Appear>
+                    <Text margin={25}>
+                        Only one is allowed to exist per page
+                    </Text>
+                </Appear>
             </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={3}>Nav</Heading>
-                <Text margin={10}>Defines navigation links</Text>
+
+            <Slide bgColor='tertiary'>
+                <Heading textColor='primary' size={2}>Nav</Heading>
+                <Appear>
+                    <Text margin={25}>
+                        Container to define site navigation links
+                    </Text>
+                </Appear>
             </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={3}>Article</Heading>
-                <Text margin={10}>Self-contained content</Text>
-                <Text>Should make sense on its own</Text>
+
+            <Slide bgColor='tertiary'>
+                <Heading textColor='primary' size={2}>Article</Heading>
+                <Appear>
+                    <Text margin={25}>
+                        Content within is self contained
+                    </Text>
+                </Appear>
+                <Appear>
+                    <Text margin={25}>
+                        Should make sense on its own
+                    </Text>
+                </Appear>
             </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={3}>Section</Heading>
-                <Text margin={10}>Defines a grouping of content</Text>
-                <Text>Typically contains a header</Text>
+
+            <Slide bgColor='tertiary'>
+                <Heading textColor='primary' size={2}>Section</Heading>
+                <Appear>
+                    <Text margin={25}>
+                        Defines a group of content
+                    </Text>
+                </Appear>
+                <Appear>
+                    <Text margin={25}>
+                        Typically will have its own header
+                    </Text>
+                </Appear>
             </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={3}>Article vs Section</Heading>
-                <Text margin={10}>No rules!</Text>
+
+            {/* TODO - fix this slide */}
+            <Slide bgColor='tertiary'>
+                <Heading textColor='primary' size={2}>Article vs. Section</Heading>
+                <Appear>
+                    <Text margin={25}>
+                        No Offical Rules!
+                    </Text>
+                </Appear>
+                <Appear>
                 <Layout>
                     <Fill>
                         <code>
@@ -367,43 +471,85 @@ export const Presentation = () => {
                         </code>
                     </Fill>
                 </Layout>
-            </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={3}>Footer</Heading>
-                <Appear>
-                    <Text margin={10}>Author</Text>
-                </Appear>
-                <Appear>
-                    <Text margin={10}>Copyright</Text>
-                </Appear>
-                <Appear>
-                    <Text margin={10}>Terms of Use</Text>
-                </Appear>
-                <Appear>
-                    <Text margin={10}>Contact Info</Text>
                 </Appear>
             </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={3}>Header</Heading>
-                <Text margin={10}>Contains introductory content</Text>
+
+
+            <Slide bgColor='tertiary'>
+                <Heading textColor='primary' size={2}>Footer</Heading>
+                <Appear>
+                    <Text margin={25}>
+                        Author
+                    </Text>
+                </Appear>
+                <Appear>
+                    <Text margin={25}>
+                        Copyright
+                    </Text>
+                </Appear>
+
+                <Appear>
+                    <Text margin={25}>
+                        Terms of Use
+                    </Text>
+                </Appear>
+
+                <Appear>
+                    <Text margin={25}>
+                        Contact Info
+                    </Text>
+                </Appear>
             </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={3}>Aside</Heading>
-                <Text margin={10}>Defines content related to `main`</Text>
+
+            <Slide bgColor='tertiary'>
+                <Heading textColor='primary' size={2}>Header</Heading>
+                <Appear>
+                    <Text margin={25}>
+                        Contains introductory content
+                    </Text>
+                </Appear>
+                <Appear>
+                    <Text margin={25}>
+                        Usually contains the nav but it doesn't have to
+                    </Text>
+                </Appear>
             </Slide>
-            <Slide>
-                <Heading textColor='tertiary' size={2}>Text Formatting</Heading>
+
+            <Slide bgColor='tertiary'>
+                <Heading textColor='primary' size={2}>Aside</Heading>
                 <Appear>
-                    <Text margin={10}>p</Text>
+                    <Text margin={25}>
+                        Defines content related to, but separate from, main
+                    </Text>
                 </Appear>
                 <Appear>
-                    <Text margin={10}>h1-h6</Text>
+                    <Text margin={25}>
+                        Should make sense on its own
+                    </Text>
+                </Appear>
+            </Slide>
+
+            <Slide bgColor='tertiary'>
+                <Heading textColor='primary' size={2}>Text Formatting Tags</Heading>
+                <Appear>
+                    <Text margin={25}>
+                        p
+                    </Text>
                 </Appear>
                 <Appear>
-                    <Text margin={10}>blockquotes</Text>
+                    <Text margin={25}>
+                        H1 - H6
+                    </Text>
                 </Appear>
                 <Appear>
-                    <Text margin={10}>ul</Text>
+                    <Text margin={25}>
+                        Blockquotes
+                    </Text>
+                </Appear>
+                <Appear>
+                    <Text margin={25}>
+                        Unordered Lists (UL)
+                    </Text>
                 </Appear>
             </Slide>
             {/* Extended Semantics with Aria */}
@@ -411,15 +557,22 @@ export const Presentation = () => {
                 <Heading textColor='tertiary'>Extending Semantics with WAI-ARIA</Heading>
             </Slide>
             {/* Aria */}
-            <Slide bgColor='secondary'>
+            <Slide bgColor='secondary' style={{ position: 'relative'}}>
                 <Heading textColor='tertiary'>
                     Arya Stark???
                 </Heading>
+                <Appear>
+                    <video autoPlay loop style={{ height: '100%', position: 'absolute', top: '0', left: '30%', right: '30%' }}>
+                        <source src="https://media.giphy.com/media/WsFsLN9BNYYOZ0jxUM/giphy.mp4"
+                                type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;"/>
+                    </video>
+                </Appear>
             </Slide>
             <Slide bgColor='secondary'>
-                <video autoPlay loop>
-                    <source src="https://media.giphy.com/media/WsFsLN9BNYYOZ0jxUM/giphy.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" />
-                </video>
+
+            </Slide>
+            <Slide>
+                Define Aria
             </Slide>
             <Slide>
                 <Heading textColor='tertiary'>aria-label</Heading>
