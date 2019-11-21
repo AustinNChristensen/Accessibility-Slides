@@ -1,7 +1,6 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 // Import React
 import React from 'react';
-import solsticeImage from './assets/solstice.png';
 import { TAB_ORDER_EXAMPLE_URL } from './vars';
 
 // Import Spectacle Core tags
@@ -76,7 +75,16 @@ export const Presentation = () => {
                     Aria && WAI && WCAG 2.0h my
                 </Text>
             </Slide>
-            <Slide bgImage={solsticeImage}/>
+            <Slide>
+                <div style={{position: 'absolute', left: 0, right: 0, top:0, bottom: 0}}>
+                    <div style={{ width: '100%', height: '100%', position: 'relative'}}>
+                        <video autoPlay loop width={'100%'}>
+                            <source src={require('./assets/CoverVideo.mp4')}
+                                type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
+            </Slide>
             <Slide bgColor='secondary'>
                 <Heading textColor='tertiary' fit caps>
                     WTF*
@@ -146,7 +154,7 @@ export const Presentation = () => {
                             <Fit>
                                 <Text textColor='primary' margin={20}>Temporary</Text>
                                 <Text textColor='primary' margin={20}>Situational</Text>
-                                <Text textColor='primary' margin={20}>Permenant</Text>
+                                <Text textColor='primary' margin={20}>Permanent</Text>
                             </Fit>
                         </Appear>
                     </Fill>
