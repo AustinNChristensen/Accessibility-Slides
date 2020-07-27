@@ -72,16 +72,6 @@ export const Presentation = () => {
                     Aria && WAI && WCAG 2.0h my
                 </Text>
             </Slide>
-            <Slide>
-                <div style={{position: 'absolute', left: 0, right: 0, top:0, bottom: 0}}>
-                    <div style={{ width: '100%', height: '100%', position: 'relative'}}>
-                        <video autoPlay loop width={'100%'}>
-                            <source src={require('./assets/CoverVideo.mp4')}
-                                type="video/mp4" />
-                        </video>
-                    </div>
-                </div>
-            </Slide>
             <Slide bgColor='secondary'>
                 <Heading textColor='tertiary' fit caps>
                     WTF*
